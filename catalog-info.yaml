@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-yrdoocwg-gitops
+  description: This is GitOps manifest for go-yrdoocwg   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-yrdoocwg
+    backstage.io/kubernetes-id: go-yrdoocwg 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-yrdoocwg
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-yrdoocwg
